@@ -1,6 +1,14 @@
+/*
+ * File: main.cpp
+ * Description: Simple countdown program for Arduino using Serial input.
+ * Author: Philipp Jahn
+ * Date: 2025-10-13
+ */
+
 #include <Arduino.h>
 
 void setup() {
+  // Initialize serial communication at 115200 baud rate for communication with the computer via USB
   Serial.begin(115200);
 }
 
@@ -11,9 +19,10 @@ void loop() {
   Serial.print("\nEnter countdown start number: ");
 
   while (!Serial.available()) {
-    // wait for user input
+    // Wait for user input
   }
 
+  // Serial.parseInt() converts the text input to an integer
   count = Serial.parseInt();
 
   for(int i = count; i > 0; i--) {
