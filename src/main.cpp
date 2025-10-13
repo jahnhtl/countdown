@@ -10,7 +10,11 @@ void loop() {
 
   Serial.print("\nEnter countdown start number: ");
 
-  count = Serial.read();
+  while (!Serial.available()) {
+    // wait for user input
+  }
+
+  count = Serial.parseInt();
 
   for(int i = count; i > 0; i--) {
     Serial.println(i);
