@@ -16,6 +16,11 @@ void setup() {
 void loop() {
   int count;
 
+  // Flush any existing data in the serial buffer
+  while (Serial.available()) {
+    Serial.read();
+  }
+
   Serial.print("\nEnter countdown start number: ");
 
   while (!Serial.available()) {
@@ -34,4 +39,5 @@ void loop() {
 
   delay(2000);
 }
+
 
